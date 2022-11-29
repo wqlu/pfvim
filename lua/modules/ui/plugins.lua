@@ -5,9 +5,7 @@
 local plugin = require('core.pack').register_plugin
 local conf = require('modules.ui.config')
 
-plugin({ 'glepnir/zephyr-nvim', config = conf.zephyr })
-
-plugin({ 'glepnir/dashboard-nvim', config = conf.dashboard })
+plugin({ 'sainnhe/gruvbox-material', config = conf.gruvbox })
 
 plugin({
   'glepnir/galaxyline.nvim',
