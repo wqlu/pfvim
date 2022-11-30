@@ -18,6 +18,15 @@ function config.nvim_cmp()
       completion = cmp.config.window.bordered(),
       documentation = cmp.config.window.bordered(),
     },
+    mapping = cmp.mapping.preset.insert({
+      ['<C-e>'] = cmp.config.disable,
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
+    snippet = {
+      expand = function(args)
+        require('luasnip').lsp_expand(args.body)
+      end,
+    },
     sources = {
       { name = 'nvim_lsp' },
       { name = 'luasnip' },
