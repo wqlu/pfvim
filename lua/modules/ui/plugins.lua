@@ -7,6 +7,8 @@ local conf = require('modules.ui.config')
 
 plugin({ 'sainnhe/gruvbox-material', config = conf.gruvbox })
 
+plugin({ 'xiyaowong/nvim-transparent', config = conf.transparent })
+
 plugin({
   'glepnir/galaxyline.nvim',
   branch = 'main',

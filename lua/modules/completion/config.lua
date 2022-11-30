@@ -5,7 +5,9 @@
 local config = {}
 
 -- config server in this function
-function config.nvim_lsp() end
+function config.nvim_lsp()
+  require('modules.completion.lspconfig')
+end
 
 function config.nvim_cmp()
   local cmp = require('cmp')
@@ -15,6 +17,12 @@ function config.nvim_cmp()
     window = {
       completion = cmp.config.window.bordered(),
       documentation = cmp.config.window.bordered(),
+    },
+    sources = {
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' },
+      { name = 'path' },
+      { name = 'buffer' },
     },
   })
 end

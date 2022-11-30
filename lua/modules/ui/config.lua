@@ -8,6 +8,24 @@ function config.gruvbox()
   vim.cmd('colorscheme gruvbox-material')
 end
 
+function config.transparent()
+  require("transparent").setup({
+  enable = true, -- boolean: enable transparent
+  extra_groups = { -- table/string: additional groups that should be cleared
+    -- In particular, when you set it to 'all', that means all available groups
+    -- see :help highlight-groups
+    "NormalFloat",
+    "FloatBorder",
+    "Pmenu",
+    "PmenuSbar",
+    "TabLineFill"
+  },
+  exclude = {
+    "TabLineSel"
+  }, -- table: groups you don't want to clear
+})
+end
+
 function config.galaxyline()
   require('modules.ui.eviline')
 end
