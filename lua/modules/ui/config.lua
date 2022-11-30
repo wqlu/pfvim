@@ -30,13 +30,21 @@ function config.galaxyline()
   require('modules.ui.eviline')
 end
 
-function config.nvim_bufferline()
-  require('bufferline').setup({
+function config.tabline()
+  require('tabline').setup({
+    enable = true,
     options = {
-      modified_icon = '✥',
-      buffer_close_icon = '',
-      always_show_bufferline = false,
-    },
+      section_separators = {'|', '|'},
+      component_separators = {'|', '|'},
+      max_bufferline_percent = 66,
+      show_tabs_always = false,
+      show_devicons = true,
+      show_bufnr = false,
+      show_filename_only = true,
+      modified_icon = "+ ",
+      modified_italic = false,
+      show_tabs_only = false,
+    }
   })
 end
 
