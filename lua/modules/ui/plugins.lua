@@ -29,3 +29,7 @@ plugin({
   requires = 'kyazdani42/nvim-web-devicons'
 })
 
+plugin({
+  'lukas-reineke/indent-blankline.nvim',
+  config = conf.indent_blankline
+})

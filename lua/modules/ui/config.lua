@@ -56,4 +56,10 @@ function config.nvim_tree()
   })
 end
 
+function config.indent_blankline()
+  require('indent_blankline').setup({
+    show_end_of_line = true,
+  })
+end
+
 return config
