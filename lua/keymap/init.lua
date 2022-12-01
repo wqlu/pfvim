@@ -7,6 +7,7 @@ require('keymap.config')
 local key = require('core.keymap')
 local nmap = key.nmap
 local silent, noremap = key.silent, key.noremap
+local tmap = key.tmap
 local opts = key.new_opts
 local cmd = key.cmd
 
@@ -27,3 +28,8 @@ nmap({
   { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
   { '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
 })
+
+
+--- Lspsaga floaterminal
+nmap({ '<Leader>t', cmd('Lspsaga open_floaterm') })
+tmap({ '<Leader>t', [[<C-\><C-n>:Lspsaga close_floaterm<CR>]]})
