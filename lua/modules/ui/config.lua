@@ -5,25 +5,31 @@
 local config = {}
 
 function config.gruvbox()
+  vim.g.gruvbox_material_transparent_background = 2
   vim.cmd('colorscheme gruvbox-material')
 end
 
 function config.transparent()
   require("transparent").setup({
-  enable = true, -- boolean: enable transparent
-  extra_groups = { -- table/string: additional groups that should be cleared
-    -- In particular, when you set it to 'all', that means all available groups
-    -- see :help highlight-groups
-    "NormalFloat",
-    "FloatBorder",
-    "Pmenu",
-    "PmenuSbar",
-    "TabLineFill"
-  },
-  exclude = {
-    "TabLineSel"
-  }, -- table: groups you don't want to clear
-})
+    enable = true, -- boolean: enable transparent
+    extra_groups = { -- table/string: additional groups that should be cleared
+      -- In particular, when you set it to 'all', that means all available groups
+      -- see :help highlight-groups
+      "NormalFloat",
+      "FloatBorder",
+      "Pmenu",
+      "PmenuSbar",
+      "TabLineFill",
+      'StatusLine',
+      'StatusLineNC',
+      'NvimTreeNormal',
+      'NvimTreeVertSplit',
+      'CursorColumn',
+      'NvimTreeCursorLine'
+    },
+    exclude = {
+    }, -- table: groups you don't want to clear
+  })
 end
 
 function config.galaxyline()
