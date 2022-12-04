@@ -41,7 +41,7 @@ imap({
   -- insert mode
   { '<C-h>', '<Bs>', opts(noremap) },
   { '<C-e>', '<End>', opts(noremap) },
-  { 'jj', '<ESC>', opts(noremap) },
+  { 'jk', '<ESC>', opts(noremap) },
 })
 
 -- commandline remap

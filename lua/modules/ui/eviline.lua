@@ -8,6 +8,7 @@ if not status_ok then
 end
 
 local colors = require('galaxyline.theme').default
+colors.bg = 'NONE'
 local condition = require('galaxyline.condition')
 local gls = galaxyline.section
 galaxyline.short_line_list = { 'NvimTree', 'vista', 'dbui', 'packer' }
