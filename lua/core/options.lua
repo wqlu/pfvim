@@ -47,8 +47,8 @@ opt.cmdheight = 0
 opt.laststatus = 3
 opt.list = true
 opt.listchars:append("eol:↴")
-opt.pumblend = 10
-opt.winblend = 10
+opt.pumblend = 0
+opt.winblend = 0
 opt.undofile = true
 
 opt.smarttab = true
