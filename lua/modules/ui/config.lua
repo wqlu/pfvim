@@ -28,6 +28,7 @@ function config.transparent()
       'NvimTreeCursorLine'
     },
     exclude = {
+      'tabline_a_normal'
     }, -- table: groups you don't want to clear
   })
 end
@@ -52,6 +53,7 @@ function config.tabline()
       show_tabs_only = false,
     }
   })
+  vim.api.nvim_command('hi tabline_a_normal guifg=#a9b665')
 end
 
 function config.nvim_tree()
