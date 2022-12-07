@@ -1,3 +1,4 @@
+local api = vim.api
 local lspconfig = require('lspconfig')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -28,6 +29,20 @@ vim.diagnostic.config({
     source = true,
   },
 })
+
+local on_attach = function(client, bufnr)
+  if client.server_capabilities.documentFormattingProvider then
+    api.nvim_create_autocmd('BufWritePre', {
+      pattern = client.config.filetypes,
+      callback = function()
+        vim.lsp.buf.format({
+          bufnr = bufnr,
+          async = true,
+        })
+      end,
+    })
+  end
+end
 
 lspconfig.gopls.setup({
   cmd = { 'gopls', '--remote=auto' },
@@ -63,4 +78,8 @@ lspconfig.clangd.setup({
     '--clang-tidy',
     '--header-insertion=iwyu',
   },
+})
+
+lspconfig.tsserver.setup({
+  on_attach = on_attach,
 })

@@ -29,7 +29,7 @@ function config.nvim_cmp()
     mapping = cmp.mapping.preset.insert({
       ['<C-e>'] = cmp.config.disable,
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
-      ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item()),
+      ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item()),
       ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item()),
     }),
     snippet = {
