@@ -25,12 +25,6 @@ plugin({
 })
 
 plugin({
-  'glepnir/lspsaga.nvim',
-  after = 'nvim-lspconfig',
-  config = conf.lspsaga,
-})
-
-plugin({
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
   config = conf.nvim_cmp,

@@ -14,3 +14,8 @@ plugin({
     { 'nvim-telescope/telescope-fzy-native.nvim', opt = true },
   },
 })
+
+plugin({
+  'akinsho/toggleterm.nvim',
+  config = conf.toggleterm
+})
