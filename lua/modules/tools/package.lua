@@ -2,14 +2,14 @@
 -- date: 2022-07-02
 -- License: MIT
 
-local plugin = require('core.pack').register_plugin
+local package = require('core.pack').package
 local conf = require('modules.tools.config')
 
-plugin({
+package({
   'nvim-telescope/telescope.nvim',
   cmd = 'Telescope',
   config = conf.telescope,
-  requires = {
+  dependencies = {
     { 'nvim-lua/plenary.nvim', opt = true },
     { 'nvim-telescope/telescope-fzy-native.nvim', opt = true },
   },

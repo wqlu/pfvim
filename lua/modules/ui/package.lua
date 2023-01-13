@@ -13,20 +13,20 @@ package({
   'glepnir/galaxyline.nvim',
   branch = 'main',
   config = conf.galaxyline,
-  requires = 'kyazdani42/nvim-web-devicons',
+  dependencies = 'kyazdani42/nvim-web-devicons',
 })
 
 package({
   'kyazdani42/nvim-tree.lua',
   cmd = 'NvimTreeToggle',
   config = conf.nvim_tree,
-  requires = 'kyazdani42/nvim-web-devicons',
+  dependencies = 'kyazdani42/nvim-web-devicons',
 })
 
 package({
   'kdheepak/tabline.nvim',
   config = conf.tabline,
-  requires = 'kyazdani42/nvim-web-devicons'
+  dependencies = 'kyazdani42/nvim-web-devicons'
 })
 
 package({
