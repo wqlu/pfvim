@@ -20,11 +20,10 @@ package({
   'neovim/nvim-lspconfig',
   -- used filetype to lazyload lsp
   -- config your language filetype in here
-  dev = true,
   ft = enable_lsp_filetype,
   config = conf.nvim_lsp,
   dependencies = {
-    { 'glepnir/lspsaga.nvim', dev = true, config = conf.lspsaga }
+    { 'glepnir/lspsaga.nvim', config = conf.lspsaga }
   },
 })
 
