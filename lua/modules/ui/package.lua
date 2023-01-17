@@ -2,34 +2,34 @@
 -- date: 2022-07-02
 -- License: MIT
 
-local plugin = require('core.pack').register_plugin
+local package = require('core.pack').package
 local conf = require('modules.ui.config')
 
-plugin({ 'sainnhe/gruvbox-material', config = conf.gruvbox })
+package({ 'sainnhe/gruvbox-material', config = conf.gruvbox })
 
-plugin({ 'xiyaowong/nvim-transparent', config = conf.transparent })
+package({ 'xiyaowong/nvim-transparent', config = conf.transparent })
 
-plugin({
+package({
   'glepnir/galaxyline.nvim',
   branch = 'main',
   config = conf.galaxyline,
-  requires = 'kyazdani42/nvim-web-devicons',
+  dependencies = 'kyazdani42/nvim-web-devicons',
 })
 
-plugin({
+package({
   'kyazdani42/nvim-tree.lua',
   cmd = 'NvimTreeToggle',
   config = conf.nvim_tree,
-  requires = 'kyazdani42/nvim-web-devicons',
+  dependencies = 'kyazdani42/nvim-web-devicons',
 })
 
-plugin({
+package({
   'kdheepak/tabline.nvim',
   config = conf.tabline,
-  requires = 'kyazdani42/nvim-web-devicons'
+  dependencies = 'kyazdani42/nvim-web-devicons'
 })
 
-plugin({
+package({
   'lukas-reineke/indent-blankline.nvim',
   config = conf.indent_blankline
 })

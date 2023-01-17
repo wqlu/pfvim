@@ -9,6 +9,13 @@ function config.nvim_lsp()
   require('modules.completion.lspconfig')
 end
 
+<<<<<<< HEAD
+=======
+function config.lspsaga()
+  require('lspsaga').setup({})
+end
+
+>>>>>>> 80f1dd404e8e0e25d042d1743620fcf489a562ff
 function config.nvim_cmp()
   local cmp = require('cmp')
 

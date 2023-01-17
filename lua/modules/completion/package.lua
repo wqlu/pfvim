@@ -2,7 +2,7 @@
 -- date: 2022-07-02
 -- License: MIT
 
-local plugin = require('core.pack').register_plugin
+local package = require('core.pack').package
 local conf = require('modules.completion.config')
 
 local enable_lsp_filetype = {
@@ -16,25 +16,32 @@ local enable_lsp_filetype = {
   'json',
   'python'
 }
-plugin({
+package({
   'neovim/nvim-lspconfig',
   -- used filetype to lazyload lsp
   -- config your language filetype in here
   ft = enable_lsp_filetype,
   config = conf.nvim_lsp,
-})
-
-plugin({
-  'hrsh7th/nvim-cmp',
-  event = 'InsertEnter',
-  config = conf.nvim_cmp,
-  requires = {
-    { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-lspconfig' },
-    { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-    { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
-    { 'saadparwaiz1/cmp_luasnip', after = 'LuaSnip' },
+  dependencies = {
+    { 'glepnir/lspsaga.nvim', config = conf.lspsaga }
   },
 })
 
-plugin({ 'L3MON4D3/LuaSnip', event = 'InsertCharPre', config = conf.lua_snip })
-plugin({ 'windwp/nvim-autopairs', event= 'InsertEnter', config = conf.auto_pairs })
+package({
+  'hrsh7th/nvim-cmp',
+  event = 'InsertEnter',
+  config = conf.nvim_cmp,
+  dependencies = {
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-buffer',
+  },
+})
+
+package({
+  'L3MON4D3/LuaSnip',
+  event = 'InsertCharPre',
+  config = conf.lua_snip,
+  dependencies = { 'saadparwaiz1/cmp_luasnip' }
+})
+package({ 'windwp/nvim-autopairs', event= 'InsertEnter', config = conf.auto_pairs })
