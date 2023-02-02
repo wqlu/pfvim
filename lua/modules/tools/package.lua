@@ -15,3 +15,4 @@ package({
     'nvim-telescope/telescope-file-browser.nvim',
   },
 })
+

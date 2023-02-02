@@ -29,5 +29,5 @@ nmap({
 
 
 --- Lspsaga floaterminal
-nmap({ '<Leader>t', cmd('Lspsaga open_floaterm') })
+nmap({ '<Leader>tt', cmd('ToggleTerm') })
 tmap({ '<Leader>t', [[<C-\><C-n>:Lspsaga close_floaterm<CR>]]})
