@@ -14,7 +14,10 @@ local enable_lsp_filetype = {
   'javascript',
   'javascriptreact',
   'json',
-  'python'
+  'python',
+  'typescript',
+  'typescriptreact',
+  'typescript.tsx'
 }
 package({
   'neovim/nvim-lspconfig',
