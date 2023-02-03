@@ -25,9 +25,10 @@ nmap({
   { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
   { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
   { '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
+  { '<Leader>fb', cmd('Telescope file_browser'), opts(noremap, silent) },
 })
 
 
 --- Lspsaga floaterminal
-nmap({ '<Leader>tt', cmd('ToggleTerm') })
-tmap({ '<Leader>t', [[<C-\><C-n>:Lspsaga close_floaterm<CR>]]})
+nmap({ '<Leader>t', cmd('Lspsaga term_toggle'), opts(noremap, silent) })
+tmap({ 'jk', [[<C-\><C-n>:Lspsaga term_toggle<CR>]]})

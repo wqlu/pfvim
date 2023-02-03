@@ -25,7 +25,8 @@ function config.transparent()
       'NvimTreeNormal',
       'NvimTreeVertSplit',
       'CursorColumn',
-      'NvimTreeCursorLine'
+      'NvimTreeCursorLine',
+      'SagaBorder'
     },
     exclude = {
       'tabline_a_normal'
